@@ -1,6 +1,5 @@
 package com.example.demo.Controller;
 
-import ch.qos.logback.core.net.server.Client;
 import com.example.demo.Service.ClienteService;
 import com.example.demo.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/clientes")
 public class ClienteController {
 

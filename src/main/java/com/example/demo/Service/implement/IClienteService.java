@@ -1,14 +1,10 @@
-package com.example.demo.Service;
+package com.example.demo.Service.implement;
 
-
-import ch.qos.logback.core.net.server.Client;
 import com.example.demo.model.Cliente;
 
 import java.util.List;
 
-
 public interface IClienteService {
-
     Cliente create(Cliente cliente);
 
     Cliente update(Cliente cliente);
@@ -18,5 +14,4 @@ public interface IClienteService {
     List<Cliente> findAll();
 
     void delete(Integer id);
-
 }
