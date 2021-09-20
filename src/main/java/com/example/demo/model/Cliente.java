@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //
+    @GeneratedValue(strategy = GenerationType.AUTO) //AUTO automatico, native el autoincremento de mysql
     private Integer idCliente;
 
     /*nullable ->valores nulos*/
@@ -34,7 +34,7 @@ public class Cliente {
     @Column(name = "password", nullable = true, length = 55)
     private String password;
 
-    @Transient
+    @Transient // no va ser mapeada osea omite este valor en la base de datos nunca l incluye
     private String confirmPassword;
 
     public Integer getIdCliente() {
