@@ -16,8 +16,12 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteRepository clienteRepo;
 
     @Override
-    public Cliente create(Cliente cliente) {
-        return clienteRepo.save(cliente);
+    public Cliente create(Cliente cliente) throws Exception {
+        //condicionando la creacion del usuario por medio del password y el user
+        if( checkUsuarioExistente(cliente) && checkPasswordMatch(cliente)){
+            clienteRepo.save(cliente);
+        }
+        return cliente;
     }
 
     @Override
@@ -32,8 +36,30 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    public Cliente getClienteById(Integer id) throws Exception{
+        return clienteRepo.findById(id).orElseThrow(() -> new Exception("El usuario para editar no existe"));
+    }
+
+    @Override
     public List<Cliente> findAll() {
-        return (List<Cliente>) clienteRepo.findAll();
+        return clienteRepo.findAll(); //clienteRepo.findAllByStatus
+    }
+
+    //Buscar un usuario existente en el DataBase
+    private boolean checkUsuarioExistente(Cliente cliente) throws Exception{
+        Optional<Cliente> userFound = clienteRepo.findAllByUsername(cliente.getUsername());
+        if(userFound.isPresent()){
+            throw new Exception("Usuario no disponible");
+        }
+        return true;
+    }
+
+    //Comprobar que la clave y la confirmacion sean iguales
+    private boolean checkPasswordMatch(Cliente cliente) throws Exception{
+        if( !cliente.getPassword().equals(cliente.getConfirmPassword())){
+            throw new Exception("Password y confirm Password no son iguales");
+        }
+        return true;
     }
 
     @Override

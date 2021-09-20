@@ -19,19 +19,16 @@ public class Cliente {
     @Column(name = "apellidos", nullable = false, length = 150)
     private String apellidos;
 
-    @Column(name="direccion",nullable = false, length = 150)
-    private String direccion;
-
-    @Column(name = "telefono", nullable = true, length =10)
+    @Column(name = "telefono", nullable = false, length =10)
     private String telefono;
 
-    @Column(name = "email", nullable = true, length = 55)
+    @Column(name = "email", nullable = false, length = 55)
     private String email;
 
-    @Column(name = "username", nullable = true)
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(name = "password", nullable = true, length = 55)
+    @Column(name = "password", nullable = false, length = 55)
     private String password;
 
     @Transient // no va ser mapeada osea omite este valor en la base de datos nunca l incluye en la base de datos
@@ -59,14 +56,6 @@ public class Cliente {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public String getTelefono() {

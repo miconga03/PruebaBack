@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/clientes")
@@ -15,13 +17,13 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    /*@GetMapping
+    @GetMapping
     public ResponseEntity<List<Cliente>> findAll(){
         return new ResponseEntity<>(clienteService.findAll(), HttpStatus.OK);
-    }*/
+    }
 
     @PostMapping
-    public ResponseEntity<Cliente> create(@RequestBody Cliente cliente){
+    public ResponseEntity<Cliente> create(@RequestBody Cliente cliente) throws Exception {
         return new ResponseEntity<>(clienteService.create(cliente), HttpStatus.CREATED);
     }
 
