@@ -34,7 +34,7 @@ public class Cliente {
     @Column(name = "password", nullable = true, length = 55)
     private String password;
 
-    @Transient // no va ser mapeada osea omite este valor en la base de datos nunca l incluye
+    @Transient // no va ser mapeada osea omite este valor en la base de datos nunca l incluye en la base de datos
     private String confirmPassword;
 
     public Integer getIdCliente() {
