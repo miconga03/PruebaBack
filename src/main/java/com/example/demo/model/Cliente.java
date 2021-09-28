@@ -28,12 +28,6 @@ public class Cliente {
     @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(name = "password", nullable = false, length = 55)
-    private String password;
-
-    @Transient // no va ser mapeada osea omite este valor en la base de datos nunca l incluye en la base de datos
-    private String confirmPassword;
-
     public Integer getIdCliente() {
         return idCliente;
     }
@@ -82,19 +76,5 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
 }

@@ -12,7 +12,6 @@ public class Clientedto {
 
     private String email;
 
-    private String password;
 
     public Integer getIdCliente() {
         return idCliente;
@@ -54,11 +53,4 @@ public class Clientedto {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
