@@ -17,10 +17,10 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    /*@GetMapping
+    @GetMapping
     public ResponseEntity<List<Cliente>> findAll(){
         return new ResponseEntity<>(clienteService.findAll(), HttpStatus.OK);
-    }*/
+    }
 
     @PostMapping
     public ResponseEntity<Cliente> create(@RequestBody Cliente cliente){

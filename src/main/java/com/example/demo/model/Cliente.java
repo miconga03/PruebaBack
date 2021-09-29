@@ -9,31 +9,32 @@ import javax.persistence.*;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCliente;
 
     /*nullable ->valores nulos*/
-    @Column(name = "nombre", nullable = false, length = 70)
+    @Column(name = "nombre")
     private String nombres;
 
-    @Column(name = "apellidos", nullable = false, length = 150)
+    @Column(name = "apellidos")
     private String apellidos;
 
-    @Column(name="direccion",nullable = false, length = 150)
+    @Column(name="direccion")
     private String direccion;
 
-    @Column(name = "telefono", nullable = true, length =10)
+    @Column(name = "telefono")
     private String telefono;
 
-    /*@Column(name = "email", nullable = true, length = 55)
-    private String email;
+    @Column(name = "nombreArticulo")
+    private String nombreArticulo;
 
-    @Column(name = "username", nullable = true)
-    private String username;
+    @Column(name = "cantidad")
+    private int cantidad;
 
-    @Column(name = "password", nullable = true, length = 55)
-    private String password;*/
+    @Column(name = "valor")
+    private int valor;
+
+
 
     public Integer getIdCliente() {
         return idCliente;
@@ -73,5 +74,29 @@ public class Cliente {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getNombreArticulo() {
+        return nombreArticulo;
+    }
+
+    public void setNombreArticulo(String nombreArticulo) {
+        this.nombreArticulo = nombreArticulo;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
     }
 }

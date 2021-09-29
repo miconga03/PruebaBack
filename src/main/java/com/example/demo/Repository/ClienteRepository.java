@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Set;
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente,Integer> {
+public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
 
     //Convecnion sobre configuracion, busca desde el nombre de usuario
     //public Set<Cliente> findByUsername(String username);

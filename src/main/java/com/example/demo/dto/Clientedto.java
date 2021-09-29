@@ -8,11 +8,12 @@ public class Clientedto {
 
     private String apellidos;
 
-    private String telefono;
+    private String nombreArticulo;
 
-    private String email;
+    private int cantidad;
 
-    private String password;
+    private int valor;
+
 
     public Integer getIdCliente() {
         return idCliente;
@@ -38,27 +39,27 @@ public class Clientedto {
         this.apellidos = apellidos;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getNombreArticulo() {
+        return nombreArticulo;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setNombreArticulo(String nombreArticulo) {
+        this.nombreArticulo = nombreArticulo;
     }
 
-    public String getEmail() {
-        return email;
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
-    public String getPassword() {
-        return password;
+    public int getValor() {
+        return valor;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setValor(int valor) {
+        this.valor = valor;
     }
 }

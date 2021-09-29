@@ -32,10 +32,10 @@ public class ClienteService implements IClienteService {
         return clienteOptional.orElse( null);
     }
 
-    /*@Override
+    @Override
     public List<Cliente> findAll() {
         return clienteRepo.findAll();
-    }*/
+    }
 
     @Override
     public void delete(Integer id) {
